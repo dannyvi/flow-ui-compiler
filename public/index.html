@@ -1,0 +1,56 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>FlowUI App</title>
+      <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; background-color: #f0f2f5; }
+    .page-container { display: none; padding: 20px; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .page-container.active { display: block; }
+    h1, p { margin: 0; }
+    .layout-vertical { display: flex; flex-direction: column; }
+    .layout-horizontal { display: flex; flex-direction: row; align-items: center; }
+    .align-center { align-items: center; }
+    .align-stretch { align-items: stretch; }
+    .spacing-m > * + * { margin-top: 15px; }
+    .spacing-l > * + * { margin-top: 25px; }
+    .layout-horizontal.spacing-m > * + * { margin-top: 0; margin-left: 15px; }
+    .flow-ui-input, .flow-ui-button { padding: 10px 15px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; }
+    .flow-ui-button { background-color: #007bff; color: white; border: none; cursor: pointer; }
+    .flow-ui-link { color: #007bff; text-decoration: none; cursor: pointer; }
+    .flow-ui-image { max-width: 100%; height: auto; }
+  </style>
+    </head>
+    <body>
+      <div id="Login" class="page-container active">
+      <div class="flow-ui-container main layout-vertical align-center spacing-l"><img class="flow-ui-image logo" src="https://via.placeholder.com/150x50.png?text=Logo" alt="logo">
+<h1 class="flow-ui-header">欢迎登录系统</h1>
+<div class="flow-ui-form loginForm layout-vertical align-stretch spacing-m"><input class="flow-ui-input username" type="text" placeholder="请输入用户名">
+<input class="flow-ui-input password" type="password" placeholder="请输入密码">
+<button class="flow-ui-button" onclick="window.location.hash='dashboard'">安全登录</button>
+<a href="#" class="flow-ui-link" onclick="window.location.hash='register'">没有账号？立即注册</a></div></div>
+    </div>
+<div id="Dashboard" class="page-container ">
+      <div class="flow-ui-container layout-vertical spacing-m"><h1 class="flow-ui-header">仪表盘</h1>
+<p class="flow-ui-text">欢迎回来, 用户！</p>
+<div class="flow-ui-container card layout-horizontal spacing-m"><p class="flow-ui-text">您的账户余额：</p>
+<p class="flow-ui-text">¥1,024.00</p>
+<button class="flow-ui-button" onclick="window.location.hash='login'">退出登录</button></div></div>
+    </div>
+      
+    <script>
+      function handleHashChange() {
+        const hash = window.location.hash.substring(1) || 'Login';
+        document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
+        const activePage = document.getElementById(hash);
+        if (activePage) activePage.classList.add('active');
+      }
+      window.addEventListener('hashchange', handleHashChange);
+      window.addEventListener('load', handleHashChange); // Handle initial load
+    </script>
+  
+    </body>
+    </html>
+  

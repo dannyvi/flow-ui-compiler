@@ -1,0 +1,35 @@
+page home
+    container main { layout: "vertical", align: "center", spacing: "l" }
+        header "欢迎使用FlowUI"
+        text "这是一个使用FlowUI构建的简单应用演示"
+        
+        container buttons { layout: "horizontal", spacing: "m" }
+            button "开始体验" -> /demo
+            button "了解更多" -> /about
+
+page demo
+    container main { layout: "vertical", spacing: "m" }
+        header "功能演示"
+        text "这里展示了FlowUI的各种组件"
+        
+        form demoForm { layout: "vertical", spacing: "m" }
+            input nameInput { placeholder: "请输入您的姓名" }
+            select roleSelect { options: ["用户", "管理员", "访客"] }
+            button "提交" -> alert("感谢您的提交！")
+            
+        container navigation { layout: "horizontal", spacing: "s" }
+            link "返回首页" -> /home
+            link "关于我们" -> /about
+
+page about
+    container main { layout: "vertical", spacing: "m" }
+        header "关于FlowUI"
+        text "FlowUI是一个专注于UI结构和用户流程的DSL"
+        
+        container features { layout: "vertical", spacing: "s" }
+            text "• 极简的语法设计"
+            text "• 专注于结构和交互"
+            text "• 易于学习和使用"
+            text "• 适合快速原型开发"
+            
+        button "返回首页" -> /home 

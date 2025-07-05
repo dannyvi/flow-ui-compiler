@@ -1,0 +1,23 @@
+page Login
+    container main { layout: "vertical", align: "center", spacing: "l" }
+        // 这是一个 Logo 图片
+        image logo { src: "https://via.placeholder.com/150x50.png?text=Logo" }
+        header "欢迎登录系统"
+
+        form loginForm { layout: "vertical", spacing: "m", align: "stretch" }
+            input username { placeholder: "请输入用户名" }
+            input password { type: "password", placeholder: "请输入密码" }
+            button "安全登录" -> /dashboard
+
+        link "没有账号？立即注册" -> /register
+        
+page Dashboard
+    container { layout: "vertical", spacing: "m" }
+        header "仪表盘"
+        text "欢迎回来, 用户！"
+        
+        container card { layout: "horizontal", spacing: "m"}
+            text "您的账户余额："
+            text "¥1,024.00"
+
+        button "退出登录" -> /login

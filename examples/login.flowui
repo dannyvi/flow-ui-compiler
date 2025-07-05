@@ -1,0 +1,36 @@
+page Login
+    container main { layout: "vertical", align: "center", spacing: "l" }
+        image logo { src: "logo.png" }
+        header "欢迎登录"
+        text "请输入您的账户信息"
+
+        form loginForm { layout: "vertical", spacing: "m" }
+            input username { placeholder: "用户名" }
+            input password { type: "password", placeholder: "密码" }
+            button "登录" -> /dashboard
+
+        link "没有账号？点击注册" -> /register
+
+page register
+    container main { layout: "vertical", align: "center", spacing: "l" }
+        header "用户注册"
+        text "创建您的新账户"
+
+        form registerForm { layout: "vertical", spacing: "m" }
+            input username { placeholder: "用户名" }
+            input email { type: "email", placeholder: "电子邮箱" }
+            input password { type: "password", placeholder: "密码" }
+            input confirmPassword { type: "password", placeholder: "确认密码" }
+            button "注册" -> /dashboard
+
+        link "已有账号？点击登录" -> /login
+
+page dashboard
+    container main { layout: "vertical", spacing: "m" }
+        header "仪表盘"
+        text "欢迎来到您的个人仪表盘！"
+        
+        container actions { layout: "horizontal", spacing: "m" }
+            button "个人资料" -> /profile
+            button "设置" -> /settings
+            button "退出登录" -> /login 

@@ -1,0 +1,29 @@
+{
+  "name": "flow-ui-compiler",
+  "version": "0.1.0",
+  "description": "A compiler for the FlowUI DSL",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "cli": "ts-node src/cli.ts"
+  },
+  "bin": {
+    "flowui": "./dist/cli.js"
+  },
+  "keywords": [
+    "dsl",
+    "compiler",
+    "prototyping"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
