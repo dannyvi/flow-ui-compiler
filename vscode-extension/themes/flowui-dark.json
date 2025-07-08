@@ -1,0 +1,165 @@
+{
+  "name": "FlowUI Dark",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1e1e1e",
+    "editor.foreground": "#d4d4d4",
+    "editorLineNumber.foreground": "#858585",
+    "editorCursor.foreground": "#ffffff",
+    "editor.selectionBackground": "#264f78",
+    "editor.inactiveSelectionBackground": "#3a3d41"
+  },
+  "tokenColors": [
+    {
+      "name": "Comment",
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "fontStyle": "italic",
+        "foreground": "#6A9955"
+      }
+    },
+    {
+      "name": "Page Declaration",
+      "scope": [
+        "keyword.control.page.flowui"
+      ],
+      "settings": {
+        "foreground": "#C586C0",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Page Name",
+      "scope": [
+        "entity.name.function.page.flowui"
+      ],
+      "settings": {
+        "foreground": "#DCDCAA",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Component Keywords",
+      "scope": [
+        "keyword.other.component.flowui"
+      ],
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Component Identifiers",
+      "scope": [
+        "variable.other.identifier.flowui"
+      ],
+      "settings": {
+        "foreground": "#9CDCFE"
+      }
+    },
+    {
+      "name": "Strings",
+      "scope": [
+        "string.quoted.double.flowui"
+      ],
+      "settings": {
+        "foreground": "#CE9178"
+      }
+    },
+    {
+      "name": "Property Names",
+      "scope": [
+        "support.type.property-name.flowui",
+        "storage.type.property.flowui"
+      ],
+      "settings": {
+        "foreground": "#92C5F7"
+      }
+    },
+    {
+      "name": "Property Values",
+      "scope": [
+        "string.unquoted.property-value.flowui"
+      ],
+      "settings": {
+        "foreground": "#B5CEA8"
+      }
+    },
+    {
+      "name": "Action Operator",
+      "scope": [
+        "keyword.operator.action.flowui"
+      ],
+      "settings": {
+        "foreground": "#D4D4D4",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Page References",
+      "scope": [
+        "entity.name.function.page-reference.flowui"
+      ],
+      "settings": {
+        "foreground": "#4EC9B0"
+      }
+    },
+    {
+      "name": "Action Keywords",
+      "scope": [
+        "keyword.control.action.flowui"
+      ],
+      "settings": {
+        "foreground": "#C586C0"
+      }
+    },
+    {
+      "name": "Layout Keywords",
+      "scope": [
+        "keyword.other.layout.flowui"
+      ],
+      "settings": {
+        "foreground": "#4FC1FF"
+      }
+    },
+    {
+      "name": "Spacing Keywords",
+      "scope": [
+        "keyword.other.spacing.flowui"
+      ],
+      "settings": {
+        "foreground": "#FFD700"
+      }
+    },
+    {
+      "name": "Input Type Keywords",
+      "scope": [
+        "keyword.other.input-type.flowui"
+      ],
+      "settings": {
+        "foreground": "#FF6B6B"
+      }
+    },
+    {
+      "name": "Function Calls",
+      "scope": [
+        "entity.name.function.flowui"
+      ],
+      "settings": {
+        "foreground": "#DCDCAA"
+      }
+    },
+    {
+      "name": "Punctuation",
+      "scope": [
+        "punctuation.separator.comma.flowui"
+      ],
+      "settings": {
+        "foreground": "#D4D4D4"
+      }
+    }
+  ]
+} 

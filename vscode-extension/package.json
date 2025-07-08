@@ -1,0 +1,66 @@
+{
+  "name": "flowui-syntax-highlighter",
+  "displayName": "FlowUI Syntax Highlighter",
+  "description": "Syntax highlighting for FlowUI DSL files",
+  "version": "1.0.0",
+  "publisher": "flowui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dannyvi/flow-ui-compiler.git"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "flowui",
+    "dsl",
+    "ui",
+    "syntax"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:flowui"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "flowui",
+        "aliases": [
+          "FlowUI",
+          "flowui"
+        ],
+        "extensions": [
+          ".flowui"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flowui",
+        "scopeName": "source.flowui",
+        "path": "./syntaxes/flowui.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "FlowUI Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/flowui-dark.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  }
+} 

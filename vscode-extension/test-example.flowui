@@ -1,0 +1,96 @@
+// FlowUI Syntax Highlighting Test File
+// This file demonstrates various FlowUI syntax elements
+
+page welcome
+    container main { layout: "vertical", align: "center", spacing: "l" }
+        header "Welcome to FlowUI"
+        text "This is a demonstration of FlowUI syntax highlighting"
+        
+        form loginForm { layout: "vertical", spacing: "m" }
+            input username { placeholder: "Enter username", type: "text" }
+            input password { type: "password", placeholder: "Enter password" }
+            button "Login" -> /dashboard
+        
+        container buttons { layout: "horizontal", spacing: "s" }
+            button "Sign Up" -> /register
+            button "Forgot Password" -> /forgot
+
+page dashboard
+    container main { layout: "vertical", spacing: "m" }
+        header "Dashboard"
+        text "Welcome to your dashboard!"
+        
+        container stats { layout: "horizontal", spacing: "l" }
+            container card1 { layout: "vertical", align: "center" }
+                text "Users"
+                text "1,234"
+            
+            container card2 { layout: "vertical", align: "center" }
+                text "Revenue"
+                text "$56,789"
+        
+        container actions { layout: "horizontal", spacing: "m" }
+            button "View Reports" -> /reports
+            button "Settings" -> /settings
+            button "Logout" -> /welcome
+
+page register
+    container main { layout: "vertical", align: "center", spacing: "l" }
+        header "Create Account"
+        
+        form registerForm { layout: "vertical", spacing: "m" }
+            input fullName { placeholder: "Full Name", type: "text" }
+            input email { placeholder: "Email Address", type: "email" }
+            input password { placeholder: "Password", type: "password" }
+            input confirmPassword { placeholder: "Confirm Password", type: "password" }
+            
+            select country { options: ["USA", "Canada", "UK", "Australia"] }
+            
+            button "Create Account" -> submit
+        
+        link "Already have an account? Login" -> /welcome
+
+page settings
+    container main { layout: "vertical", spacing: "m" }
+        header "Settings"
+        
+        form settingsForm { layout: "vertical", spacing: "m" }
+            container profile { layout: "vertical", spacing: "s" }
+                text "Profile Settings"
+                input displayName { placeholder: "Display Name" }
+                input bio { type: "textarea", placeholder: "Tell us about yourself" }
+            
+            container preferences { layout: "vertical", spacing: "s" }
+                text "Preferences"
+                select theme { options: ["Light", "Dark", "Auto"] }
+                select language { options: ["English", "Spanish", "French"] }
+            
+            container notifications { layout: "vertical", spacing: "s" }
+                text "Notifications"
+                input emailNotifications { type: "checkbox" }
+                input pushNotifications { type: "checkbox" }
+            
+            button "Save Settings" -> alert("Settings saved successfully!")
+        
+        button "Back to Dashboard" -> /dashboard
+
+// Test various input types
+page forms
+    container main { layout: "vertical", spacing: "m" }
+        header "Form Elements Test"
+        
+        form testForm { layout: "vertical", spacing: "m" }
+            input textInput { type: "text", placeholder: "Text input" }
+            input numberInput { type: "number", placeholder: "Number input" }
+            input emailInput { type: "email", placeholder: "Email input" }
+            input passwordInput { type: "password", placeholder: "Password input" }
+            input textareaInput { type: "textarea", placeholder: "Textarea input" }
+            input rangeInput { type: "range", placeholder: "Range input" }
+            
+            select singleSelect { options: ["Option 1", "Option 2", "Option 3"] }
+            
+            button "Submit" -> submit
+            button "Reset" -> alert("Form reset!")
+        
+        image logo { src: "logo.png" }
+        link "Go back" -> /welcome 

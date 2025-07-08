@@ -1,0 +1,71 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "compile",
+            "group": "build",
+            "presentation": {
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "typescript",
+                    "source": "ts",
+                    "applyTo": "closedDocuments",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^([a-zA-Z]\\:)?([^:]*):([0-9]+):([0-9]+):\\s+(warning|error)\\s+(TS[0-9]+)\\s*:\\s*(.*)$",
+                            "file": 2,
+                            "line": 3,
+                            "column": 4,
+                            "severity": 5,
+                            "code": 6,
+                            "message": 7
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "group": "build",
+            "presentation": {
+                "panel": "shared"
+            },
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                    "owner": "typescript",
+                    "source": "ts",
+                    "applyTo": "closedDocuments",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}"
+                    ],
+                    "pattern": [
+                        {
+                            "regexp": "^([a-zA-Z]\\:)?([^:]*):([0-9]+):([0-9]+):\\s+(warning|error)\\s+(TS[0-9]+)\\s*:\\s*(.*)$",
+                            "file": 2,
+                            "line": 3,
+                            "column": 4,
+                            "severity": 5,
+                            "code": 6,
+                            "message": 7
+                        }
+                    ],
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "^\\s*\\d{1,2}:\\d{1,2}:\\d{1,2}(?: AM| PM)? - File change detected\\. Starting incremental compilation\\.\\.\\.",
+                        "endsPattern": "^\\s*\\d{1,2}:\\d{1,2}:\\d{1,2}(?: AM| PM)? - Compilation complete\\. Watching for file changes\\."
+                    }
+                }
+            ]
+        }
+    ]
+} 

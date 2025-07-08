@@ -1,0 +1,204 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "FlowUI",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#page-declaration"
+    },
+    {
+      "include": "#component-declaration"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#properties"
+    },
+    {
+      "include": "#actions"
+    },
+    {
+      "include": "#keywords"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.flowui",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "page-declaration": {
+      "patterns": [
+        {
+          "name": "meta.page.flowui",
+          "match": "^\\s*(page)\\s+([a-zA-Z][a-zA-Z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.page.flowui"
+            },
+            "2": {
+              "name": "entity.name.function.page.flowui"
+            }
+          }
+        }
+      ]
+    },
+    "component-declaration": {
+      "patterns": [
+        {
+          "name": "meta.component.flowui",
+          "match": "^\\s*(container|form|header|text|input|button|select|image|link)\\s+([a-zA-Z][a-zA-Z0-9_]*)?\\s*(\"[^\"]*\")?\\s*(->\\s*[^{\\s]+)?\\s*({[^}]*})?",
+          "captures": {
+            "1": {
+              "name": "keyword.other.component.flowui"
+            },
+            "2": {
+              "name": "variable.other.identifier.flowui"
+            },
+            "3": {
+              "name": "string.quoted.double.flowui"
+            },
+            "4": {
+              "name": "keyword.operator.action.flowui"
+            },
+            "5": {
+              "name": "meta.properties.flowui"
+            }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.flowui",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.flowui",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "properties": {
+      "patterns": [
+        {
+          "name": "meta.properties.flowui",
+          "begin": "{",
+          "end": "}",
+          "patterns": [
+            {
+              "include": "#property-key-value"
+            }
+          ]
+        }
+      ]
+    },
+    "property-key-value": {
+      "patterns": [
+        {
+          "name": "meta.property.quoted-string.flowui",
+          "match": "([a-zA-Z][a-zA-Z0-9_]*)\\s*:\\s*(\"[^\"]*\")",
+          "captures": {
+            "1": {
+              "name": "support.type.property-name.flowui"
+            },
+            "2": {
+              "name": "string.quoted.double.flowui"
+            }
+          }
+        },
+        {
+          "name": "meta.property.array.flowui",
+          "match": "([a-zA-Z][a-zA-Z0-9_]*)\\s*:\\s*(\\[[^\\]]*\\])",
+          "captures": {
+            "1": {
+              "name": "support.type.property-name.flowui"
+            },
+            "2": {
+              "name": "string.quoted.double.flowui"
+            }
+          }
+        },
+        {
+          "name": "meta.property.unquoted.flowui",
+          "match": "([a-zA-Z][a-zA-Z0-9_]*)\\s*:\\s*([^,}\\s]+)",
+          "captures": {
+            "1": {
+              "name": "support.type.property-name.flowui"
+            },
+            "2": {
+              "name": "string.quoted.double.flowui"
+            }
+          }
+        },
+        {
+          "name": "punctuation.separator.comma.flowui",
+          "match": ","
+        }
+      ]
+    },
+    "actions": {
+      "patterns": [
+        {
+          "name": "keyword.operator.action.flowui",
+          "match": "->"
+        },
+        {
+          "name": "entity.name.function.page-reference.flowui",
+          "match": "/[a-zA-Z][a-zA-Z0-9_]*"
+        },
+        {
+          "name": "keyword.control.action.flowui",
+          "match": "\\b(submit|alert)\\b"
+        },
+        {
+          "name": "meta.function-call.flowui",
+          "match": "(alert)\\s*\\(\\s*(\"[^\"]*\")\\s*\\)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.flowui"
+            },
+            "2": {
+              "name": "string.quoted.double.flowui"
+            }
+          }
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.component.flowui",
+          "match": "\\b(page|container|form|header|text|input|button|select|image|link)\\b"
+        },
+        {
+          "name": "keyword.other.layout.flowui",
+          "match": "\\b(vertical|horizontal|center|start|end)\\b"
+        },
+        {
+          "name": "keyword.other.spacing.flowui",
+          "match": "\\b(s|m|l)\\b"
+        },
+        {
+          "name": "keyword.other.input-type.flowui",
+          "match": "\\b(text|password|email|number|textarea|range)\\b"
+        },
+        {
+          "name": "storage.type.property.flowui",
+          "match": "\\b(layout|spacing|align|placeholder|type|src|options)\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.flowui"
+} 
